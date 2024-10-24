@@ -1,0 +1,46 @@
+/* step 7, 8 */
+
+.card{
+    flex-basis: 450px;
+}
+
+.pricing{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.gallery{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+@media screen and (max-width: 900px){
+    /* step 11 */
+header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.nav_links{
+    flex-direction: row;
+}
+
+/* step 12 */
+.card{
+    flex-basis: 275px;
+}
+
+.pricing{
+    align-items: center;
+}
+}
+
+@media all and (prefers-reduced-motion){
+}
+
+@media print{
+}
+
