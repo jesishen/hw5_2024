@@ -1,46 +1,150 @@
-/* step 7, 8 */
-
-.card{
-    flex-basis: 450px;
+/* 1. Animate the logo with keyframes */
+@keyframes logoAnim {
+    from {
+        width: 25px;
+        opacity: 0;
+    }
+    to {
+        width: 475px;
+        opacity: 1;
+    }
 }
 
-.pricing{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+#logo {
+    animation: logoAnim 5s ease-in-out forwards; 
 }
 
-.gallery{
-    border: solid 10px #50C7C7;
-    margin: 10px;
-    width: 300px;
+/* 2. Body font and background */
+body {
+    font-family: 'Poppins', serif; 
+    background-image: url("images/concrete_seamless.png"); 
+    background-color: #f1f1f1; 
 }
 
-@media screen and (max-width: 900px){
-    /* step 11 */
-header{
-    display: flex;
-    flex-flow: row wrap;
+/* 3. Header styling */
+header {
+    display: flex; 
+    align-items: center; 
     justify-content: space-between;
+    padding: 10px;
 }
 
-.nav_links{
-    flex-direction: row;
+/* 4. Nav links styling */
+.nav_links {
+    display: flex; 
+    gap: 15px;
+    align-items: center; 
 }
 
-/* step 12 */
-.card{
-    flex-basis: 275px;
+/* 5. Link colors */
+.nav_links a,
+.nav_links a:visited {
+    color: #288088; 
+    text-decoration: none; 
 }
 
-.pricing{
-    align-items: center;
-}
-}
-
-@media all and (prefers-reduced-motion){
-}
-
-@media print{
+/* 6. Card header styling */
+.card > header {
+    background: #288088; 
+    border: 2px solid #45ADAD; 
+    padding: 20px 0; 
+    border-top-left-radius: 50px; 
+    border-top-right-radius: 50px; 
 }
 
+/* 7. Card styling */
+.card {
+    flex-basis: 450px; 
+}
+
+/* 8. Pricing class styling */
+.pricing {
+    display: flex; 
+    flex-flow: row wrap; 
+    justify-content: center; 
+}
+
+/* 9. Gallery image styling */
+.gallery img {
+    border: solid 10px #50C7C7; 
+    margin: 10px; 
+    width: 300px; 
+}
+
+/* 10. Gallery styling */
+.gallery {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+}
+
+/* 11. Header and nav links for larger screens */
+@media screen and (min-width: 900px) {
+    header {
+        justify-content: space-between; 
+    }
+
+    .nav_links {
+        justify-content: flex-end; 
+    }
+
+/* 12. Card size for larger screens */
+    .card {
+        flex-basis: 275px;
+    }
+}
+
+/* 13. Make header sticky on scroll */
+header {
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
+/* 14. Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none; 
+    }
+}
+
+/* 15. Print styles */
+@media print {
+    body {
+        font-family: Arial, Helvetica, sans-serif; 
+        background-image: none;
+    }
+
+    /* 16. Remove background image for print */
+    body {
+        background-color: #fff; 
+    }
+
+    /* 17. Nav spacing for print */
+    .nav_links {
+        display: flex; 
+        justify-content: space-between; 
+    }
+
+    /* 18. Align pricing elements */
+    .pricing {
+        align-items: flex-end; 
+    }
+
+    /* 19. Card borders for print */
+    .card {
+        border: 2px solid #45ADDD; 
+        flex-basis: 325px; 
+    }
+
+    /* 20. Hide gallery in print */
+    .gallery {
+        display: none; 
+    }
+}
+
+/* 21. Thumbs up entity for list items */
+.card ul li::before {
+    content: "👍"; 
+    margin-right: 5px; 
+}
